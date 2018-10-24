@@ -1,0 +1,60 @@
+plugins {
+    id 'com.diffplug.gradle.spotless' version '3.15.0'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.diffplug.gradle.spotless'
+    apply plugin: 'pmd'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    group 'net.omikron'
+    version '1.0.0'
+
+    spotless {
+        java {
+            googleJavaFormat()
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    compileJava {
+        options.encoding = 'utf-8'
+        options.annotationProcessorPath = configurations.annotationProcessor
+    }
+
+    compileTestJava {
+        options.encoding = 'utf-8'
+        options.annotationProcessorPath = configurations.annotationProcessor
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    javadoc {
+        options.addStringOption('sourcepath', '')
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.setEncoding('UTF-8')
+    }
+
+    task packageJavadoc(type: Jar, dependsOn: tasks.javadoc) {
+        classifier = 'javadoc'
+        from project.javadoc.destinationDir
+    }
+
+    task packageSources(type: Jar) {
+        classifier = 'sources'
+        from project.sourceSets.main.allSource
+    }
+
+    artifacts {
+        archives project.tasks.packageJavadoc
+        archives project.tasks.packageSources
+    }
+}

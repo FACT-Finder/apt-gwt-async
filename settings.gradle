@@ -1,0 +1,3 @@
+rootProject.name = 'apt-gwt-async'
+include ':apt-gwt-async-annotation'
+include ':apt-gwt-async-processor'
