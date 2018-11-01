@@ -13,6 +13,10 @@ subprojects {
     group 'net.omikron'
     version '1.0.0'
 
+    pmd {
+        consoleOutput = true
+    }
+
     spotless {
         java {
             googleJavaFormat()
