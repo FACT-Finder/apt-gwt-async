@@ -1,6 +1,7 @@
 # Java Annotation Processor GWT Async Services 
 
 [![Build Status](https://travis-ci.org/FACT-Finder/apt-gwt-async.svg?branch=master)](https://travis-ci.org/FACT-Finder/apt-gwt-async)
+[![Coverage Status](https://coveralls.io/repos/github/FACT-Finder/apt-gwt-async/badge.svg?branch=master)](https://coveralls.io/github/FACT-Finder/apt-gwt-async?branch=master)
 [![](https://jitpack.io/v/fact-finder/apt-gwt-async.svg)](https://jitpack.io/#fact-finder/apt-gwt-async)
 
 

@@ -1,11 +1,14 @@
 plugins {
     id 'com.diffplug.gradle.spotless' version '3.15.0'
+    id 'com.github.kt3k.coveralls' version '2.8.2'
 }
 
 subprojects {
     apply plugin: 'java'
     apply plugin: 'com.diffplug.gradle.spotless'
     apply plugin: 'pmd'
+    apply plugin: 'jacoco'
+    apply plugin: 'com.github.kt3k.coveralls'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -20,6 +23,12 @@ subprojects {
     spotless {
         java {
             googleJavaFormat()
+        }
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
         }
     }
 
