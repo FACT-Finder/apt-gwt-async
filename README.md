@@ -69,8 +69,8 @@ repositories {
 apply plugin: 'java'
 
 dependencies {
-  compileOnly 'com.github.fact-finder.apt-gwt-async:apt-gwt-async-annotation:1.0'
-  annotationProcessor 'com.github.fact-finder.apt-gwt-async:apt-gwt-async-processor:1.0'
+  compileOnly 'com.github.fact-finder.apt-gwt-async:apt-gwt-async-annotation:1.0.0'
+  annotationProcessor 'com.github.fact-finder.apt-gwt-async:apt-gwt-async-processor:1.0.0'
 }
 ```
 
